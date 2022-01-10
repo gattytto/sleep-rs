@@ -26,4 +26,4 @@ RUN cp ./target/release/sleep /sleep
 
 FROM scratch
 WORKDIR /
-COPY from=builder /sleep ./
+COPY --from=builder ./sleep ./
