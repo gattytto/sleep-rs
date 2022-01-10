@@ -21,7 +21,7 @@ RUN mkdir /sleep
 WORKDIR /sleep
 
 COPY ./ .
-RUN cargo build --release && find .
+RUN cargo build --target x86_64-unknown-linux-musl --release
 RUN cp ./target/release/sleep /sleep
 
 FROM scratch
