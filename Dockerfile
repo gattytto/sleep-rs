@@ -21,7 +21,7 @@ RUN adduser \
 WORKDIR /
 
 COPY ./ .
-RUN cargo build --target x86_64-unknown-linux-musl --release && find .
+RUN cargo build --target x86_64-unknown-linux-musl --release && ls .
 RUN cp target/release/sleep ./sleep
 
 FROM scratch
