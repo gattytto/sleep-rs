@@ -21,8 +21,8 @@ RUN mkdir /sleep
 WORKDIR /sleep
 
 COPY ./ .
-RUN cargo build && ls .
-RUN cp target/release/sleep /sleep
+RUN cargo build && find .
+RUN cp ./target/release/sleep /sleep
 
 FROM scratch
 WORKDIR /
