@@ -17,12 +17,12 @@ RUN adduser \
     --uid "${UID}" \
     "${USER}"
 
-
-WORKDIR /
+RUN mkdir /sleep
+WORKDIR /sleep
 
 COPY ./ .
-RUN cargo build --target x86_64-unknown-linux-musl --release && ls .
-RUN cp target/release/sleep ./sleep
+RUN cargo build && ls .
+RUN cp target/release/sleep /sleep
 
 FROM scratch
 WORKDIR /
