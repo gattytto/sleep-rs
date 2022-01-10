@@ -21,7 +21,7 @@ RUN mkdir /sleep
 WORKDIR /sleep
 
 COPY ./ .
-RUN cargo build && find .
+RUN cargo build --release && find .
 RUN cp ./target/release/sleep /sleep
 
 FROM scratch
